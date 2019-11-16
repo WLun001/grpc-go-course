@@ -13,7 +13,7 @@ import (
 	"google.golang.org/grpc/credentials"
 	"google.golang.org/grpc/status"
 
-	"github.com/simplesteph/grpc-go-course/greet/greetpb"
+	"grpc-go-course/greet/greetpb"
 
 	"google.golang.org/grpc"
 )

@@ -6,8 +6,8 @@ import (
 	"io"
 	"log"
 
-	"github.com/simplesteph/grpc-go-course/blog/blogpb"
 	"google.golang.org/grpc"
+	"grpc-go-course/blog/blogpb"
 )
 
 func main() {

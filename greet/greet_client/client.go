@@ -10,7 +10,7 @@ import (
 	"google.golang.org/grpc/codes"
 	"google.golang.org/grpc/credentials"
 
-	"github.com/simplesteph/grpc-go-course/greet/greetpb"
+	"grpc-go-course/greet/greetpb"
 
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/status"
@@ -40,7 +40,6 @@ func main() {
 
 	c := greetpb.NewGreetServiceClient(cc)
 	// fmt.Printf("Created client: %f", c)
-
 	doUnary(c)
 	// doServerStreaming(c)
 	// doClientStreaming(c)
