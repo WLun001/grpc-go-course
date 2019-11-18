@@ -66,7 +66,6 @@ func (*server) LongGreet(stream greetpb.GreetService_LongGreetServer) error {
 
 func (*server) GreetEveryone(stream greetpb.GreetService_GreetEveryoneServer) error {
 	fmt.Printf("GreetEveryone function was invoked with a streaming request\n")
-
 	for {
 		req, err := stream.Recv()
 		if err == io.EOF {
@@ -119,8 +118,8 @@ func main() {
 	opts := []grpc.ServerOption{}
 	tls := false
 	if tls {
-		certFile := "ssl/server.crt"
-		keyFile := "ssl/server.pem"
+		certFile := "../../ssl/server.crt"
+		keyFile := "../../ssl/server.pem"
 		creds, sslErr := credentials.NewServerTLSFromFile(certFile, keyFile)
 		if sslErr != nil {
 			log.Fatalf("Failed loading certificates: %v", sslErr)

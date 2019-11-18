@@ -20,10 +20,10 @@ func main() {
 
 	fmt.Println("Hello I'm a client")
 
-	tls := false
+	tls := true
 	opts := grpc.WithInsecure()
 	if tls {
-		certFile := "ssl/ca.crt" // Certificate Authority Trust certificate
+		certFile := "../../ssl/ca.crt" // Certificate Authority Trust certificate
 		creds, sslErr := credentials.NewClientTLSFromFile(certFile, "")
 		if sslErr != nil {
 			log.Fatalf("Error while loading CA trust certificate: %v", sslErr)
@@ -96,27 +96,27 @@ func doClientStreaming(c greetpb.GreetServiceClient) {
 	fmt.Println("Starting to do a Client Streaming RPC...")
 
 	requests := []*greetpb.LongGreetRequest{
-		&greetpb.LongGreetRequest{
+		{
 			Greeting: &greetpb.Greeting{
 				FirstName: "Stephane",
 			},
 		},
-		&greetpb.LongGreetRequest{
+		{
 			Greeting: &greetpb.Greeting{
 				FirstName: "John",
 			},
 		},
-		&greetpb.LongGreetRequest{
+		{
 			Greeting: &greetpb.Greeting{
 				FirstName: "Lucy",
 			},
 		},
-		&greetpb.LongGreetRequest{
+		{
 			Greeting: &greetpb.Greeting{
 				FirstName: "Mark",
 			},
 		},
-		&greetpb.LongGreetRequest{
+		{
 			Greeting: &greetpb.Greeting{
 				FirstName: "Piper",
 			},
@@ -154,27 +154,27 @@ func doBiDiStreaming(c greetpb.GreetServiceClient) {
 	}
 
 	requests := []*greetpb.GreetEveryoneRequest{
-		&greetpb.GreetEveryoneRequest{
+		{
 			Greeting: &greetpb.Greeting{
 				FirstName: "Stephane",
 			},
 		},
-		&greetpb.GreetEveryoneRequest{
+		{
 			Greeting: &greetpb.Greeting{
 				FirstName: "John",
 			},
 		},
-		&greetpb.GreetEveryoneRequest{
+		{
 			Greeting: &greetpb.Greeting{
 				FirstName: "Lucy",
 			},
 		},
-		&greetpb.GreetEveryoneRequest{
+		{
 			Greeting: &greetpb.Greeting{
 				FirstName: "Mark",
 			},
 		},
-		&greetpb.GreetEveryoneRequest{
+		{
 			Greeting: &greetpb.Greeting{
 				FirstName: "Piper",
 			},
